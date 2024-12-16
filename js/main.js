@@ -121,16 +121,31 @@ changeLanguage(currentLang);
 
 // get involved js
 
-    // Get references to the buttons and the form
-    const volunteerBtn = document.getElementById('volunteer-btn');
-    const signupForm = document.getElementById('signup-form');
+    // Scroll-triggered animation
+    window.addEventListener("scroll", function() {
+        const getInvolvedSection = document.getElementById("get-involved");
+        const getInvolvedContent = document.querySelector(".get-involved-content");
 
-    // Event listener for the "Volunteer with Us" button
-    volunteerBtn.addEventListener('click', function() {
-        // Toggle visibility of the sign-up form
-        signupForm.classList.toggle('show');
+        // Check if the Get Involved section is in the viewport
+        const sectionTop = getInvolvedSection.getBoundingClientRect().top;
+        const sectionHeight = getInvolvedSection.offsetHeight;
+        const windowHeight = window.innerHeight;
+
+        if (sectionTop < windowHeight - 100) {
+            getInvolvedContent.style.opacity = "1";
+            getInvolvedContent.style.transform = "translateY(0)";
+        }
     });
-
-
-
-   
+    // Handle Volunteer Button click to show the signup form with animation
+document.getElementById('volunteer-btn').addEventListener('click', function () {
+    const signupForm = document.getElementById('signup-form');
+    signupForm.classList.add('show');
+    signupForm.scrollIntoView({ behavior: 'smooth' });
+  });
+  
+  // Handle Donate Button click to show the donation form
+  document.getElementById('donate-btn').addEventListener('click', function () {
+    const donateSection = document.getElementById('donate-section');
+    donateSection.scrollIntoView({ behavior: 'smooth' });
+  });
+  

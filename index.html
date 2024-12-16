@@ -74,6 +74,67 @@
       </div>
     </section>
 
+    <section id="events">
+      <h2 id="events-title">Upcoming Events</h2>
+      <div class="event-card" id="event-1">
+        <h3 id="event-1-title">Sports Day</h3>
+        <p id="event-1-description">Join us for a day of sports and fun activities for the youth.</p>
+      </div>
+      <div class="event-card" id="event-2">
+        <h3 id="event-2-title">Community Cleanup</h3>
+        <p id="event-2-description">Help us clean up the community and make it a better place for everyone.</p>
+      </div>
+      <div class="event-card" id="event-3">
+        <h3 id="event-3-title">Addiction Awareness</h3>
+        <p id="event-3-description">Learn about the dangers of addiction and how you can help those in need.</p>
+      </div>
+    </section>
+
+      <!-- get Involved -->
+      <section id="get-involved">
+        <div class="get-involved-content">
+          <h2 id="get-involved-title">Get Involved</h2>
+          <p id="get-involved-description">Your involvement can make a difference. Join us in our mission to empower the
+            youth of Nepal. Whether it's through volunteering, donating, or participating in our events, every contribution counts!</p>
+      
+          <div class="cta-buttons">
+            <button class="cta-btn" id="volunteer-btn">Volunteer with Us</button>
+            <button class="cta-btn" id="donate-btn">Donate</button>
+          </div>
+      
+          <!-- Sign Up Form for Volunteering -->
+          <div id="signup-form" class="form-container">
+            <h3>Sign Up for Volunteering</h3>
+            <form action="#" method="post">
+              <label for="name">Full Name:</label>
+              <input type="text" id="name" name="name" required placeholder="Enter your full name">
+      
+              <label for="email">Email Address:</label>
+              <input type="email" id="email" name="email" required placeholder="Enter your email address">
+      
+              <label for="message">Why do you want to volunteer?</label>
+              <textarea id="message" name="message" rows="4" required placeholder="Tell us why you want to get involved"></textarea>
+      
+              <button type="submit" class="cta-btn">Submit</button>
+            </form>
+          </div>
+      
+          <!-- PayPal Donate Button -->
+          <div id="donate-section" class="donate-section">
+            <h3>Make a Difference with Your Donation</h3>
+            <p>Your generous donation helps us empower Nepal’s youth and combat societal challenges. Thank you for your support!</p>
+      
+            <form action="https://www.paypal.com/donate" method="post" target="_blank">
+              <input type="hidden" name="business" value="your-paypal-email@example.com">
+              <input type="hidden" name="item_name" value="Donation to Empower Youth">
+              <input type="hidden" name="currency_code" value="USD">
+              <button type="submit" class="cta-btn">Donate Now</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+
     <section id="contact">
       <h2 id="contact-title">Contact Us</h2>
       <form id="contact-form">
@@ -84,38 +145,8 @@
       </form>
     </section>
 
-    <!-- get Involved -->
-    <section id="get-involved">
-      <div class="get-involved-content">
-        <h2 id="get-involved-title">Get Involved</h2>
-        <p id="get-involved-description">Your involvement can make a difference. Join us in our mission to empower the
-          youth of Nepal. Whether it's through volunteering, donating, or participating in our events, every
-          contribution counts!</p>
-
-        <div class="cta-buttons">
-          <button class="cta-btn" id="volunteer-btn">Volunteer with Us</button>
-          <button class="cta-btn" id="donate-btn">Donate</button>
-        </div>
-
-        <div id="signup-form">
-          <h3>Sign Up for Volunteering</h3>
-          <form action="#" method="post">
-            <label for="name">Full Name:</label>
-            <input type="text" id="name" name="name" required placeholder="Enter your full name">
-
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email" required placeholder="Enter your email address">
-
-            <label for="message">Why do you want to volunteer?</label>
-            <textarea id="message" name="message" rows="4" required
-              placeholder="Tell us why you want to get involved"></textarea>
-
-            <button type="submit" class="cta-btn">Submit</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
+  
+    
 
     <!-- Scroll to Top Button -->
     <button id="scroll-to-top" title="Go to top">↑</button>
