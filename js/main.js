@@ -119,3 +119,18 @@ changeLanguage(currentLang);
     });
 
 
+// get involved js
+
+    // Get references to the buttons and the form
+    const volunteerBtn = document.getElementById('volunteer-btn');
+    const signupForm = document.getElementById('signup-form');
+
+    // Event listener for the "Volunteer with Us" button
+    volunteerBtn.addEventListener('click', function() {
+        // Toggle visibility of the sign-up form
+        signupForm.classList.toggle('show');
+    });
+
+
+
+   
