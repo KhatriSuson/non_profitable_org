@@ -1,20 +1,88 @@
-/* Global Styles */
+/* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.hero {
+  background-image: url('images/martyrs-background.jpg');
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-content {
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+}
+
+.cta-button {
+  background-color: #FF5733;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+/* Dark Mode Variables */
+:root {
+  --background-color: #f4f4f4;
+  --text-color: #333;
+}
+
+body.dark-mode {
+  --background-color: #333;
+  --text-color: #f4f4f4;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Language Toggle */
+.language-toggle {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+/* Scroll-to-Top Button */
+#scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #FF5733;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  display: none;
+  cursor: pointer;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hero-content h1 {
+      font-size: 24px;
   }
-  
-  .hero {
-    background: url('../img/hero-bg.jpg') no-repeat center center/cover;
-    color: white;
-    padding: 100px 0;
+
+  .cta-button {
+      font-size: 14px;
   }
-  
-  .mission, .projects, .get-involved {
-    margin-top: 50px;
-  }
-  
-  /* Form Styles */
-  form {
-    margin-top: 20px;
-  }
-  
+}
