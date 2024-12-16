@@ -1,45 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Martyrs' Memorial Organization</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martyrs' Legacy - Empowering Youth</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <!-- Dark/Light Mode Toggle Button -->
-  <button id="theme-toggle" class="theme-toggle">🌙</button>
+    <!-- Header with Navbar, Dark/Light Mode Toggle and Language Toggle -->
+    <header>
+        <div class="logo">Martyrs' Legacy</div>
+        <nav>
+            <ul class="navbar">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about-us" class="nav-link">About Us</a></li>
+                <li><a href="#programs" class="nav-link">Programs</a></li>
+                <li><a href="#events" class="nav-link">Events</a></li>
+                <li><a href="#get-involved" class="nav-link">Get Involved</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#contact-us" class="nav-link">Contact Us</a></li>
+            </ul>
+        </nav>
 
-  <!-- Language Toggle -->
-  <div class="language-toggle">
-    <select id="language-selector">
-      <option value="en">English</option>
-      <option value="np">नेपाली</option>
-    </select>
-  </div>
+        <!-- Dark/Light Mode Toggle Button -->
+        <button id="theme-toggle" class="theme-toggle">🌙</button>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1 id="hero-title">Empowering Youth in Honor of Nepal's Martyrs</h1>
-      <p id="hero-subtitle">Building a better future through sports, social work, and community service.</p>
-      <a href="#programs" class="cta-button" id="cta-button">Join Our Mission</a>
-    </div>
-  </section>
+        <!-- Language Toggle -->
+        <div class="language-toggle">
+            <select id="language-selector">
+                <option value="en">English</option>
+                <option value="np">नेपाली</option>
+            </select>
+        </div>
+    </header>
 
-  <!-- Other sections: About, Programs, Events, etc. -->
-  <!-- About Section -->
-  <section>
-    <h2>About Us</h2>
-    <p>Our organization honors the martyrs of Nepal by empowering the youth...</p>
-  </section>
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-text">
+            <h1 id="hero-title">Welcome to Martyrs' Legacy</h1>
+            <p id="hero-description">Honoring our martyrs and empowering the youth of Nepal</p>
+            <button id="cta-button">Join Us</button>
+        </div>
+    </section>
 
-  <h1>hello world</h1>
+    <!-- Main Content -->
+    <main>
+        <section id="about-us">
+            <h2 id="about-us-title">About Us</h2>
+            <p id="about-description">We work towards creating a better future for Nepal’s youth...</p>
+        </section>
 
+        <section id="programs">
+            <h2 id="programs-title">Our Programs</h2>
+            <div class="program-card" id="program-1">
+                <h3 id="program-1-title">Sports</h3>
+                <p id="program-1-description">Engaging the youth in sports to build discipline and teamwork.</p>
+            </div>
+            <div class="program-card" id="program-2">
+                <h3 id="program-2-title">Social Work</h3>
+                <p id="program-2-description">Helping the community through social initiatives and volunteer work.</p>
+            </div>
+            <div class="program-card" id="program-3">
+                <h3 id="program-3-title">Addiction Recovery</h3>
+                <p id="program-3-description">Working with individuals to overcome addiction and build a brighter future.</p>
+            </div>
+        </section>
 
-  <script src="js/main.js"></script>
+        <section id="contact">
+            <h2 id="contact-title">Contact Us</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="Name" id="name" required>
+                <input type="email" placeholder="Email" id="email" required>
+                <textarea placeholder="Message" id="message" required></textarea>
+                <button type="submit" id="send-message-button">Send Message</button>
+            </form>
+        </section>
+
+        <!-- Scroll to Top Button -->
+        <button id="scroll-to-top" title="Go to top">↑</button>
+    </main>
+
+    <footer>
+        <p id="footer-text">© 2024 Martyrs' Legacy. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
 </body>
-
 </html>
