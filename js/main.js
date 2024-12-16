@@ -1,77 +1,101 @@
-// Dark and Light Mode Toggle
-const themeToggle = document.getElementById("theme-toggle");
-const body = document.body;
+// Dark/Light Mode Toggle
+ // Get the theme toggle button and body element
+ const themeToggleButton = document.getElementById("theme-toggle");
+ const body = document.body;
 
-// Set the theme from localStorage
-if(localStorage.getItem("theme") === "dark") {
-    body.classList.add("dark-mode");
-    themeToggle.textContent = "🌙";
-} else {
-    body.classList.remove("dark-mode");
-    themeToggle.textContent = "🌞";
-}
+ // Check the user's saved theme preference from localStorage
+ const savedTheme = localStorage.getItem("theme");
 
-// Toggle theme on button click
-themeToggle.addEventListener("click", () => {
-    body.classList.toggle("dark-mode");
-    const theme = body.classList.contains("dark-mode") ? "dark" : "light";
-    localStorage.setItem("theme", theme);
-    themeToggle.textContent = theme === "dark" ? "🌙" : "🌞";
-});
+ // Apply the saved theme on page load
+ if (savedTheme) {
+     body.classList.add(savedTheme);
+ }
 
-// Language Selector
-const languageSelector = document.getElementById("language-selector");
+ // Event listener for the theme toggle button
+ themeToggleButton.addEventListener("click", () => {
+     // Toggle between dark and light modes
+     body.classList.toggle("dark-mode");
 
-const languageContent = {
+     // Save the user's preference to localStorage
+     if (body.classList.contains("dark-mode")) {
+         localStorage.setItem("theme", "dark-mode");
+         themeToggleButton.innerHTML = "🌞"; // Change button icon for light mode
+     } else {
+         localStorage.setItem("theme", "light-mode");
+         themeToggleButton.innerHTML = "🌙"; // Change button icon for dark mode
+     }
+ });
+
+// Language Toggle
+const languageSelector = document.getElementById('language-selector');
+
+const currentLang = localStorage.getItem('lang') || 'en';
+languageSelector.value = currentLang;
+
+const translations = {
     en: {
-        heroTitle: "Empowering Youth in Honor of Nepal's Martyrs",
-        heroSubtitle: "Building a better future through sports, social work, and community service.",
-        ctaButton: "Join Our Mission"
+        heroTitle: 'Welcome to Martyrs\' Legacy',
+        heroDescription: 'Honoring our martyrs and empowering the youth of Nepal',
+        ctaButton: 'Join Us',
+        aboutUsTitle: 'About Us',
+        aboutDescription: 'We work towards creating a better future for Nepal’s youth...',
+        programsTitle: 'Our Programs',
+        program1Title: 'Sports',
+        program1Description: 'Engaging the youth in sports to build discipline and teamwork.',
+        program2Title: 'Social Work',
+        program2Description: 'Helping the community through social initiatives and volunteer work.',
+        program3Title: 'Addiction Recovery',
+        program3Description: 'Working with individuals to overcome addiction and build a brighter future.',
+        contactTitle: 'Contact Us',
+        sendMessageButton: 'Send Message',
+        footerText: '© 2024 Martyrs\' Legacy. All rights reserved.'
     },
     np: {
-        heroTitle: "नेपालका शहीदहरूको सम्मानमा युवा सशक्तिकरण",
-        heroSubtitle: "खेलकुद, सामाजिक कार्य, र सामुदायिक सेवामा भविष्य निर्माण।",
-        ctaButton: "हाम्रो मिशनमा सामेल हुनुहोस्"
+        heroTitle: 'शहीदहरूको धरोहरमा स्वागत छ',
+        heroDescription: 'हाम्रो शहीदहरूको सम्मान र नेपालका युवाहरूसँग सशक्त बनाउनको लागि',
+        ctaButton: 'हामीलाई सामेल गर्नुहोस्',
+        aboutUsTitle: 'हाम्रो बारेमा',
+        aboutDescription: 'हामी नेपालका युवाका लागि राम्रो भविष्य बनाउनको लागि काम गर्दैछौं...',
+        programsTitle: 'हाम्रो कार्यक्रमहरू',
+        program1Title: 'खेलकुद',
+        program1Description: 'युवाहरूलाई अनुशासन र टीमवर्क सिकाउन खेलकुदमा संलग्न गर्नु।',
+        program2Title: 'सामाजिक कार्य',
+        program2Description: 'सामाजिक पहल र स्वयंसेवा कार्यमार्फत समुदायलाई मद्दत गर्नु।',
+        program3Title: 'लत उपचार',
+        program3Description: 'लतलाई पार गर्न र उज्जवल भविष्य बनाउन व्यक्तिहरूसँग काम गर्नु।',
+        contactTitle: 'संपर्क गर्नुहोस्',
+        sendMessageButton: 'सन्देश पठाउनुहोस्',
+        footerText: '© 2024 शहीदहरूको धरोहर। सबै अधिकार सुरक्षित।'
     }
 };
 
-// Load selected language
-const loadLanguage = (language) => {
-    document.getElementById("hero-title").textContent = languageContent[language].heroTitle;
-    document.getElementById("hero-subtitle").textContent = languageContent[language].heroSubtitle;
-    document.getElementById("cta-button").textContent = languageContent[language].ctaButton;
-};
+function changeLanguage(lang) {
+    localStorage.setItem('lang', lang);
+    document.getElementById('hero-title').textContent = translations[lang].heroTitle;
+    document.getElementById('hero-description').textContent = translations[lang].heroDescription;
+    document.getElementById('cta-button').textContent = translations[lang].ctaButton;
 
-// Set the language from localStorage
-if(localStorage.getItem("language") === "np") {
-    languageSelector.value = "np";
-    loadLanguage("np");
-} else {
-    languageSelector.value = "en";
-    loadLanguage("en");
+    document.getElementById('about-us-title').textContent = translations[lang].aboutUsTitle;
+    document.getElementById('about-description').textContent = translations[lang].aboutDescription;
+
+    document.getElementById('programs-title').textContent = translations[lang].programsTitle;
+    document.getElementById('program-1-title').textContent = translations[lang].program1Title;
+    document.getElementById('program-1-description').textContent = translations[lang].program1Description;
+    document.getElementById('program-2-title').textContent = translations[lang].program2Title;
+    document.getElementById('program-2-description').textContent = translations[lang].program2Description;
+    document.getElementById('program-3-title').textContent = translations[lang].program3Title;
+    document.getElementById('program-3-description').textContent = translations[lang].program3Description;
+
+    document.getElementById('contact-title').textContent = translations[lang].contactTitle;
+    document.getElementById('send-message-button').textContent = translations[lang].sendMessageButton;
+
+    document.getElementById('footer-text').textContent = translations[lang].footerText;
 }
 
-// Change language on selection
-languageSelector.addEventListener("change", (event) => {
-    const selectedLanguage = event.target.value;
-    loadLanguage(selectedLanguage);
-    localStorage.setItem("language", selectedLanguage);
+languageSelector.addEventListener('change', () => {
+    const newLang = languageSelector.value;
+    changeLanguage(newLang);
 });
 
-// Scroll-to-Top Button
-const scrollTopButton = document.createElement('button');
-scrollTopButton.id = "scroll-top";
-scrollTopButton.textContent = "↑";
-document.body.appendChild(scrollTopButton);
-
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 100) {
-        scrollTopButton.style.display = "block";
-    } else {
-        scrollTopButton.style.display = "none";
-    }
-});
-
-scrollTopButton.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-});
+// Set the language based on saved preference on page load
+changeLanguage(currentLang);

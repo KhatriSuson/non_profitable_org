@@ -1,88 +1,323 @@
 /* General Styles */
-body {
-  font-family: Arial, sans-serif;
+* {
   margin: 0;
   padding: 0;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  transition: background-color 0.3s, color 0.3s;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
 }
 
-.hero {
-  background-image: url('images/martyrs-background.jpg');
-  background-size: cover;
-  height: 100vh;
+body {
+  background-color: #fff;
+  color: #333;
+  line-height: 1.6;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #fff;
+}
+
+/* Header and Navigation */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+header .logo {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+header nav {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar li {
+  margin: 0;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ff9900;
+}
+
+/* Language Toggle and Theme Toggle */
+.theme-toggle, .language-toggle select {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.language-toggle select {
+  background-color: #444;
+  padding: 5px 10px;
+}
+
+/* Hero Section */
+#hero {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 60vh;
+  background-image: url('your-image.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  animation: fadeIn 1s ease-out;
+}
+
+.hero-text {
+  color: white;
   text-align: center;
+  animation: fadeInUp 1.5s ease-out;
 }
 
-.hero-content {
-  color: white;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 20px;
+#hero h1 {
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+  animation: slideUp 1s ease-out;
 }
 
-.cta-button {
-  background-color: #FF5733;
+#hero p {
+  font-size: 1.5em;
+  margin-bottom: 30px;
+  opacity: 0.8;
+}
+
+button {
+  background-color: #ff9900;
+  border: none;
   padding: 10px 20px;
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
+  font-size: 1.2em;
+  cursor: pointer;
   border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-/* Dark Mode Variables */
-:root {
-  --background-color: #f4f4f4;
-  --text-color: #333;
+button:hover {
+  background-color: #cc7a00;
 }
 
-body.dark-mode {
-  --background-color: #333;
-  --text-color: #f4f4f4;
+/* Section Styling */
+section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+  animation: fadeInUp 1s ease-out;
 }
 
-/* Theme Toggle */
-.theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: transparent;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
+h2 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #333;
+  font-weight: 600;
 }
 
-/* Language Toggle */
-.language-toggle {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+/* Program Cards */
+.program-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 20px;
+  flex-basis: 30%;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Scroll-to-Top Button */
-#scroll-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #FF5733;
-  color: white;
-  border: none;
-  border-radius: 50%;
+.program-card:hover {
+  background-color: #f9f9f9;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.program-card h3 {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.program-card p {
+  font-size: 1.1em;
+  color: #666;
+}
+
+/* Contact Form */
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: auto;
+}
+
+#contact-form input,
+#contact-form textarea {
+  margin-bottom: 20px;
   padding: 15px;
-  display: none;
-  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1.2em;
 }
 
-/* Mobile Responsive */
+#contact-form button {
+  background-color: #ff9900;
+  padding: 15px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.2em;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#contact-form button:hover {
+  background-color: #cc7a00;
+}
+
+/* Scroll to Top Button */
+#scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #ff9900;
+  border: none;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  display: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#scroll-to-top:hover {
+  background-color: #cc7a00;
+}
+
+#scroll-to-top.show {
+  display: block;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 1em;
+  letter-spacing: 1px;
+}
+
+/* Animation Effects */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(50px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+      transform: translateY(50px);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .hero-content h1 {
-      font-size: 24px;
+  header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px;
   }
 
-  .cta-button {
-      font-size: 14px;
+  .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .navbar li {
+      margin: 10px 0;
+  }
+
+  #hero h1 {
+      font-size: 2.5em;
+  }
+
+  #hero p {
+      font-size: 1.2em;
+  }
+
+  .program-card {
+      flex-basis: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  #hero h1 {
+      font-size: 2em;
+  }
+
+  #hero p {
+      font-size: 1em;
+  }
+
+  .program-card {
+      padding: 15px;
+      margin: 15px 0;
+  }
+
+  #contact-form input,
+  #contact-form textarea {
+      font-size: 1em;
   }
 }
