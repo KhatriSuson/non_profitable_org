@@ -99,3 +99,23 @@ languageSelector.addEventListener('change', () => {
 
 // Set the language based on saved preference on page load
 changeLanguage(currentLang);
+
+// about js
+
+    // Scroll-triggered animation
+    window.addEventListener("scroll", function() {
+        const aboutSection = document.getElementById("about-us");
+        const aboutContent = document.querySelector(".about-content");
+
+        // Check if the About Us section is in the viewport
+        const sectionTop = aboutSection.getBoundingClientRect().top;
+        const sectionHeight = aboutSection.offsetHeight;
+        const windowHeight = window.innerHeight;
+
+        if (sectionTop < windowHeight - 100) {
+            aboutContent.style.opacity = "1";
+            aboutContent.style.transform = "translateY(0)";
+        }
+    });
+
+
