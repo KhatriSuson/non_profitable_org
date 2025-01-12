@@ -149,3 +149,29 @@ document.getElementById('volunteer-btn').addEventListener('click', function () {
     donateSection.scrollIntoView({ behavior: 'smooth' });
   });
   
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const galleryItems = document.querySelectorAll(".gallery-item");
+
+    // Show all images by default
+    galleryItems.forEach(item => item.classList.add("show"));
+
+    filterButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            // Remove 'active' class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            this.classList.add("active");
+
+            const category = this.getAttribute("data-category");
+
+            galleryItems.forEach(item => {
+                if (category === "all" || item.classList.contains(category)) {
+                    item.classList.add("show");
+                } else {
+                    item.classList.remove("show");
+                }
+            });
+        });
+    });
+});
