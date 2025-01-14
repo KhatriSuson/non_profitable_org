@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/digitalf/public_html/
+    - export DEPLOYPATH=/home/digitalf/api.digitalforensicuk.com/
     - /bin/cp * $DEPLOYPATH
