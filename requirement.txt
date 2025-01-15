@@ -1,9 +1,0 @@
-https://github.com/features/copilot/getting-started?utm_source=editor&utm_medium=walkthrough&utm_campaign=2024q3-em-MSFT-videolandingpage
-
-
-asgiref==3.8.1
-Django==5.1
-django-sslserver==0.22
-pillow==10.4.0
-sqlparse==0.5.1
-tzdata==2024.1
