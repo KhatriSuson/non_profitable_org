@@ -1,0 +1,53 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.step-links {
+    display: flex;
+    gap: 10px;
+}
+
+.step-links a {
+    padding: 8px 12px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.step-links a:hover {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.step-links .current {
+    padding: 8px 12px;
+    font-weight: bold;
+    color: #555;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.step-links a.first-page, .step-links a.last-page {
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .pagination {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .step-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

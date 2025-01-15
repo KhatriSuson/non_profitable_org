@@ -1,0 +1,51 @@
+
+ .feedback-section {
+    background-color: #f8f9fa; /* Soft background */
+    color: #333; /* Text color */
+}
+
+.feedback-card {
+    background-color: #fff;
+    border-radius: 15px;
+    max-width: 600px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.5s ease; /* Smooth scaling effect */
+}
+
+.feedback-card:hover {
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+.client-img {
+    width: 100px;
+    height: 100px;
+    border: 5px solid #f8f9fa; /* Frame around image */
+}
+
+.client-name {
+    font-size: 1.25rem; /* Larger name font */
+    color: #007bff; /* Bootstrap primary color for name */
+}
+
+.testimonial-text {
+    font-style: italic;
+    font-size: 1rem;
+}
+
+.carousel-control-prev-icon, 
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Make controls more visible */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.carousel-control-prev-icon:hover, 
+.carousel-control-next-icon:hover {
+    background-color: #007bff; /* Highlight controls on hover */
+}
+.mb-5 {
+    margin-bottom: 3rem !important;
+    color: rgb(9, 10, 10);
+}
+

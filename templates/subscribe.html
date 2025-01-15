@@ -1,0 +1,21 @@
+<!-- subscribe.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Subscribe</title>
+</head>
+<body>
+    <h1>Subscribe to our newsletter</h1>
+    {% if messages %}
+        {% for message in messages %}
+            <p style="color: {{ message.tags }}">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+    <form method="post" action="{% url 'subscribe' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Subscribe</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,208 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    background-color: #f8f9fa;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+/* Carousel Styling */
+#blog-carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    position: relative;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.carousel-item img, 
+.carousel-item video {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Caption Styling */
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.7);
+}
+
+.carousel-caption h4 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.carousel-caption .display-4 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.carousel-caption a {
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    color: white;
+    background-color: #007bff;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.carousel-caption a:hover {
+    background-color: #0056b3;
+}
+
+/* Controls */
+.carousel-control-prev, .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-control-prev:hover, .carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    font-size: 1.5rem;
+    color: white;
+}
+
+/* Custom prev/next arrows */
+.carousel-control-prev-icon::before, .carousel-control-next-icon::before {
+    font-family: 'FontAwesome';
+}
+
+.carousel-control-prev-icon::before {
+    content: '\f053'; /* Left arrow icon */
+}
+
+.carousel-control-next-icon::before {
+    content: '\f054'; /* Right arrow icon */
+}
+
+
+/* Caption Styling */
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+    border-radius: 8px; /* Smooth edges */
+}
+
+.carousel-caption h4 {
+    font-size: 1.8rem;
+    margin: 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Title background */
+    border-radius: 5px;
+}
+
+.carousel-caption .display-4 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 15px;
+    background-color: rgba(0, 123, 255, 0.8); /* Subtitle background */
+    border-radius: 8px;
+}
+
+.carousel-caption a {
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    color: white;
+    background-color: #007bff;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.carousel-caption a:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .carousel-caption {
+        padding: 8px;
+    }
+    
+    .carousel-caption h4 {
+        font-size: 1.5rem;
+        padding: 8px;
+    }
+
+    .carousel-caption .display-4 {
+        font-size: 1.8rem;
+        padding: 12px;
+    }
+}
+
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .carousel-item img, .carousel-item video {
+        height: 300px;
+    }
+
+    .carousel-caption h4 {
+        font-size: 1.5rem;
+    }
+
+    .carousel-caption .display-4 {
+        font-size: 1.8rem;
+    }
+
+    .carousel-caption a {
+        font-size: 1rem;
+        padding: 8px 20px;
+    }
+
+    .carousel-control-prev, .carousel-control-next {
+        width: 35px;
+        height: 35px;
+    }
+}

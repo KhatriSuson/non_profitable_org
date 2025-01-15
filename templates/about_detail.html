@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="blog_detail_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="section_title">{{ about.title }}</h2>
+                <!-- <p class="text-muted">{{ blog.created_at|date:"F j, Y" }}</p> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="blog_detail_image mb-4">
+                    <img src="{{ about.image.url }}" class="img-fluid rounded" alt="{{ blog.title }}">
+                </div>
+                <div class="blog_detail_content">
+                    <p>{{ about.description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'about' %}">About</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ about.title }}</li>
+    </ol>
+</nav>
+
+{% endblock %}
+
+
+<button onclick="scrollToTop()" class="btn btn-primary" id="scrollTopBtn" title="Go to top">Top</button>
+
+<script>
+    // Scroll-to-top functionality
+    window.onscroll = function() {showScrollButton()};
+
+    function showScrollButton() {
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            scrollTopBtn.style.display = "block";
+        } else {
+            scrollTopBtn.style.display = "none";
+        }
+    }
+
+    function scrollToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+<style>
+#scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+}
+</style>
+

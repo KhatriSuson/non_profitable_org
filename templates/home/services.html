@@ -1,0 +1,48 @@
+{% load static %}
+<!-- service section -->
+<section id="services" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5 display-4 font-weight-bold">Our Forensic Services</h2>
+        <div class="row g-4">
+            {% for service in page_obj_service %}
+            <div class="col-md-6 col-lg-4">
+                <div class="card service-card h-100 shadow-sm">
+                    <div class="service-img-wrapper">
+                        <img src="{{ service.image.url }}" class="card-img-top service-img" alt="{{ service.title }}">
+                    </div>
+                    <div class="card-body text-center">
+                        <b>
+                            <h5 class="card-title mt-3" style="color: rgb(51, 51, 207);">{{ service.title }}</h5>
+                        </b>
+                        <p class="card-text">{{ service.discription }}</p>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <p class="text-center">No services available at the moment.</p>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+
+<script>
+    // JavaScript to animate service cards when they come into view
+    document.addEventListener('DOMContentLoaded', function () {
+        let serviceCards = document.querySelectorAll('.animate-card');
+
+        function animateOnScroll() {
+            serviceCards.forEach((card, index) => {
+                const cardPosition = card.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (cardPosition < windowHeight - 50) {
+                    card.style.animationDelay = `${index * 0.1}s`;
+                    card.classList.add('fadeIn');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+    });
+</script>

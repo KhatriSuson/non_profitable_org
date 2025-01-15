@@ -1,0 +1,84 @@
+<div class="container-fluid p-0">
+    <div id="blog-carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            {% for item in carousel_items %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                {% if item.media_type == 'image' %}
+                    <img class="w-100" src="{{ item.image.url }}" alt="Image">
+                {% elif item.media_type == 'video' %}
+                    <video class="w-100" autoplay muted loop>
+                        <source src="{{ item.video.url }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                {% endif %}
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <h4 class="text-primary m-0">{{ item.caption_title }}</h4>
+                    <h5 class="display-4 m-0 mt-2 mt-md-3 text-white">{{ item.caption_subtitle }}</h5>
+                    {% if item.button_url %}
+                        <a href="{{ item.button_url }}" target="_blank" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">{{ item.button_text }}</a>
+                    {% endif %}
+                </div>
+            </div>
+
+
+            {% endfor %}
+        </div>
+        <a class="carousel-control-prev" href="#blog-carousel" role="button" data-slide="prev">
+            <div class="btn btn-primary rounded-circle">
+                <span class="carousel-control-prev-icon"></span>
+            </div>
+        </a>
+        <a class="carousel-control-next" href="#blog-carousel" role="button" data-slide="next">
+            <div class="btn btn-primary rounded-circle">
+                <span class="carousel-control-next-icon"></span>
+            </div>
+        </a>
+    </div>
+  </div>
+  
+  
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const blogCarousel = document.querySelector('#blog-carousel');
+        const carouselInstance = new bootstrap.Carousel(blogCarousel, {
+            interval: false, // Disable automatic slide to manually control with arrows
+            pause: 'hover',
+            wrap: true
+        });
+    
+        const carouselItems = document.querySelectorAll('.carousel-item video');
+    
+        // Pause videos when slides change
+        blogCarousel.addEventListener('slide.bs.carousel', function (event) {
+            const activeVideo = event.relatedTarget.querySelector('video');
+            const allVideos = blogCarousel.querySelectorAll('video');
+    
+            allVideos.forEach(function(video) {
+                video.pause();  // Pause all videos when sliding
+            });
+    
+            if (activeVideo) {
+                activeVideo.play(); // Play the active slide's video
+            }
+        });
+    
+        // Ensure video plays when slide is visible
+        blogCarousel.addEventListener('slid.bs.carousel', function () {
+            const activeVideo = blogCarousel.querySelector('.carousel-item.active video');
+            if (activeVideo) {
+                activeVideo.play();
+            }
+        });
+    
+        // Custom prev/next button events
+        document.querySelector('.carousel-control-prev').addEventListener('click', function () {
+            carouselInstance.prev();
+        });
+    
+        document.querySelector('.carousel-control-next').addEventListener('click', function () {
+            carouselInstance.next();
+        });
+    });
+</script>
+        
